@@ -1,731 +1,224 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rahma Abufoor | Genomic Epidemiologist</title>
-<meta name="description" content="Portfolio of Rahma Abufoor — Genomic Epidemiologist, MS Bioscience Candidate, and former Respiratory Therapist." />
-
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          slate: {
-            950: '#0a0f1a'
-          }
-        },
-        fontFamily: {
-          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        },
-        animation: {
-          'fade-up': 'fadeUp 0.7s ease-out both',
-        },
-        keyframes: {
-          fadeUp: {
-            '0%': { opacity: 0, transform: 'translateY(16px)' },
-            '100%': { opacity: 1, transform: 'translateY(0)' },
-          }
-        }
-      }
-    }
-  }
-</script>
-
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Lucide Icons via CDN -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
-  .nav-link-underline {
-    position: relative;
-  }
-  .nav-link-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: rgb(52 211 153);
-    transition: width 0.25s ease;
-  }
-  .nav-link-underline:hover::after {
-    width: 100%;
-  }
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #0f172a; }
-  ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 9999px; }
-  .skill-bar-fill { width: 0%; transition: width 1.2s ease; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahma Abufoor | Genomic Epidemiologist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
 
-<body class="bg-slate-950 text-slate-200 antialiased">
-
-<!-- ===================== NAVBAR ===================== -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md transition-colors">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center justify-between h-16">
-      <a href="#home" class="flex items-center gap-2 text-lg font-bold text-white">
-        <i data-lucide="dna" class="w-6 h-6 text-emerald-400"></i>
-        Rahma<span class="text-emerald-400">.</span>Abufoor
-      </a>
-
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="nav-link-underline hover:text-emerald-400 transition-colors">About</a>
-        <a href="#experience" class="nav-link-underline hover:text-emerald-400 transition-colors">Experience</a>
-        <a href="#education" class="nav-link-underline hover:text-emerald-400 transition-colors">Education</a>
-        <a href="#skills" class="nav-link-underline hover:text-emerald-400 transition-colors">Skills</a>
-        <a href="#projects" class="nav-link-underline hover:text-emerald-400 transition-colors">Projects</a>
-        <a href="#contact" class="nav-link-underline hover:text-emerald-400 transition-colors">Contact</a>
-      </nav>
-
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400 transition-colors">
-        <i data-lucide="mail" class="w-4 h-4"></i>
-        Get in Touch
-      </a>
-
-      <!-- Mobile menu toggle -->
-      <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-200 hover:bg-slate-800 transition-colors">
-        <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
-        <i data-lucide="x" id="icon-close" class="w-6 h-6 hidden"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile nav panel -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md">
-    <nav class="flex flex-col px-6 py-4 gap-1 text-sm font-medium text-slate-300">
-      <a href="#about" class="mobile-link py-3 border-b border-slate-800/60 hover:text-emerald-400 transition-colors">About</a>
-      <a href="#experience" class="mobile-link py-3 border-b border-slate-800/60 hover:text-emerald-400 transition-colors">Experience</a>
-      <a href="#education" class="mobile-link py-3 border-b border-slate-800/60 hover:text-emerald-400 transition-colors">Education</a>
-      <a href="#skills" class="mobile-link py-3 border-b border-slate-800/60 hover:text-emerald-400 transition-colors">Skills</a>
-      <a href="#projects" class="mobile-link py-3 border-b border-slate-800/60 hover:text-emerald-400 transition-colors">Projects</a>
-      <a href="#contact" class="mobile-link py-3 hover:text-emerald-400 transition-colors">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ===================== HERO ===================== -->
-<section id="home" class="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32">
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-40 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.15)_1px,transparent_0)] [background-size:32px_32px]"></div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <p class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400">
-        <i data-lucide="microscope" class="w-3.5 h-3.5"></i>
-        Available for research &amp; collaboration
-      </p>
-      <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-        Rahma Abufoor
-      </h1>
-      <p class="mt-4 text-xl md:text-2xl font-semibold text-emerald-400">
-        Genomic Epidemiologist &amp; MS Bioscience Candidate
-      </p>
-      <p class="mt-6 text-slate-400 text-lg leading-relaxed max-w-xl">
-        I investigate the genomic underpinnings of disease by combining RNA-seq analysis, epidemiological
-        reasoning, and reproducible bioinformatics pipelines. My path started at the bedside as a
-        Respiratory Therapist — I now bring that clinical intuition for human physiology into the lab,
-        translating sequencing data into insights that matter for patient outcomes.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#projects" class="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
-          <i data-lucide="flask-conical" class="w-4 h-4"></i>
-          View My Research
-        </a>
-        <a href="#contact" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          Download Resume
-        </a>
-      </div>
-
-      <div class="mt-10 flex items-center gap-5">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-emerald-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-400 hover:text-emerald-400 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" class="text-slate-400 hover:text-emerald-400 transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i></a>
-        <a href="mailto:rmabufoor@gmail.com" aria-label="Email" class="text-slate-400 hover:text-emerald-400 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
-      </div>
-    </div>
-
-    <div class="flex justify-center md:justify-end">
-      <div class="relative">
-        <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-emerald-500/20 to-slate-700/10 blur-2xl"></div>
-        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center overflow-hidden shadow-2xl">
-          <i data-lucide="dna" class="w-32 h-32 md:w-40 md:h-40 text-emerald-400/80"></i>
-          <div class="absolute bottom-0 inset-x-0 bg-slate-950/80 backdrop-blur-sm border-t border-slate-800 py-3 text-center">
-            <p class="text-sm font-semibold text-white">MPH · MS Bioscience (Candidate)</p>
-            <p class="text-xs text-slate-400">Former Respiratory Therapist</p>
-          </div>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight text-emerald-400">RA.</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-emerald-400 transition">About</a>
+                <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-emerald-400 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== ABOUT ===================== -->
-<section id="about" class="py-24 border-t border-slate-800/60">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">About Me</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">From the bedside to the bench</h2>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-10">
-      <div class="md:col-span-2 text-slate-400 leading-relaxed space-y-4 text-lg">
-        <p>
-          I began my career as a licensed Respiratory Therapist, managing ventilator support and critical
-          respiratory care for patients across intensive care units. That clinical grounding gave me a
-          firsthand understanding of how disease actually manifests in the human body — and it's what
-          eventually pulled me toward the genomic mechanisms driving those conditions.
-        </p>
-        <p>
-          Today I work as a Genomic Epidemiologist, designing and validating bioinformatics pipelines that
-          turn raw sequencing reads into actionable epidemiological insight. I'm currently a candidate for
-          a Master of Science in Bioscience, building on the analytical foundation I established during my
-          Master of Public Health, where I graduated with a 3.8 GPA and served as Student Senate President.
-        </p>
-        <p>
-          I care deeply about reproducibility — every pipeline I validate is version-controlled,
-          documented, and built so the next researcher can trust the output without having to
-          re-derive it themselves.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-center hover:border-emerald-500/40 transition-colors">
-          <p class="text-3xl font-extrabold text-emerald-400">3.8</p>
-          <p class="mt-1 text-xs text-slate-400 uppercase tracking-wide">MPH GPA</p>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-3 shadow-lg">
+            <a href="#about" class="block text-slate-300 hover:text-emerald-400 transition">About</a>
+            <a href="#experience" class="block text-slate-300 hover:text-emerald-400 transition">Experience</a>
+            <a href="#skills" class="block text-slate-300 hover:text-emerald-400 transition">Skills</a>
+            <a href="#projects" class="block text-slate-300 hover:text-emerald-400 transition">Projects</a>
+            <a href="#contact" class="block text-slate-300 hover:text-emerald-400 transition">Contact</a>
         </div>
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-center hover:border-emerald-500/40 transition-colors">
-          <p class="text-3xl font-extrabold text-emerald-400">5+</p>
-          <p class="mt-1 text-xs text-slate-400 uppercase tracking-wide">Years Clinical + Research</p>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+        
+        <!-- Hero Section -->
+        <section id="about" class="pt-12 md:pt-20 flex flex-col items-start space-y-6 max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Available for Research Roles
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white">
+                Rahma Abufoor
+            </h1>
+            <p class="text-xl sm:text-2xl font-medium text-slate-300 tracking-tight">
+                Genomic Epidemiologist <span class="text-emerald-400">|</span> MS Bioscience Candidate <span class="text-emerald-400">|</span> Former Respiratory Therapist
+            </p>
+            <p class="text-slate-400 leading-relaxed text-lg">
+                An ambivert and meticulous planner who bridges the gap between frontline clinical realities and high-throughput genomic data. Transitioned from a 3-year career as a Respiratory Therapist managing complex clinical phenotypes to earning an MPH in Epidemiology (3.8 GPA, Student Senate President), and currently pursuing a Master of Science in Bioscience to specialize in genomic epidemiology, bioinformatics, and transcriptomics.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#projects" class="px-6 py-3 rounded-lg bg-emerald-500 text-slate-900 font-medium hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/10">
+                    View Benchmarks
+                </a>
+                <a href="#contact" class="px-6 py-3 rounded-lg bg-slate-800 text-slate-200 font-medium hover:bg-slate-700 transition border border-slate-700/50">
+                    Contact Me
+                </a>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="space-y-8">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Professional Journey</h2>
+                <p class="text-slate-400">The evolution from clinical care to data-driven molecular epidemiology.</p>
+            </div>
+            
+            <div class="relative border-l border-slate-800 ml-4 space-y-12">
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-slate-900"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Current</span>
+                    <h3 class="text-xl font-bold text-white mt-1">Master of Science in Bioscience</h3>
+                    <p class="text-sm text-slate-400 font-medium">Focus: Genomic Epidemiology & Bioinformatics</p>
+                </div>
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Graduate Education</span>
+                    <h3 class="text-xl font-bold text-white mt-1">Master of Public Health (MPH) in Epidemiology</h3>
+                    <p class="text-sm text-slate-400 font-medium">GPA: 3.8 | Student Senate President</p>
+                    <p class="text-slate-400 mt-2 max-w-2xl text-sm leading-relaxed">
+                        Led student governance meetings, coordinated collaborative initiatives, and established analytical foundations in epidemiological research methodologies.
+                    </p>
+                </div>
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Clinical Career</span>
+                    <h3 class="text-xl font-bold text-white mt-1">Respiratory Therapist</h3>
+                    <p class="text-sm text-slate-400 font-medium">3 Years Professional Experience</p>
+                    <p class="text-slate-400 mt-2 max-w-2xl text-sm leading-relaxed">
+                        Managed long-term patient care, monitored complex clinical phenotypes, and coordinated critical respiratory interventions in acute care settings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="space-y-8">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Technical Skills Inventory</h2>
+                <p class="text-slate-400">Core toolkit mapping molecular biology to computational frameworks.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-xl bg-slate-800/40 border border-slate-800 space-y-4">
+                    <div class="flex items-center gap-3 text-emerald-400">
+                        <i data-lucide="dna" class="w-6 h-6"></i>
+                        <h3 class="text-lg font-bold text-white">Bioinformatics & Transcriptomics</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> RNA-seq quantification</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Salmon indexing & Genomic decoys</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Differential expression analysis</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Pipeline validation</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-xl bg-slate-800/40 border border-slate-800 space-y-4">
+                    <div class="flex items-center gap-3 text-emerald-400">
+                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                        <h3 class="text-lg font-bold text-white">Data & Infrastructure</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Version Control (Git/GitHub)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Linux CLI environments (bash, nano)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Google Sheets Data Modeling</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i> Epidemiology Study Design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="space-y-8">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Featured Benchmarks</h2>
+                <p class="text-slate-400">Validated pipelines and research milestones.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="group p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-emerald-500/30 transition flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="space-y-3 max-w-3xl">
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition">
+                            Genomic Pipeline Validation for Brain Tissue Analysis
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Successfully validated a rigorous, end-to-end bioinformatics pipeline analyzing protein dysfunction in human brain tissue across 18 complex transcriptomic samples.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300">RNA-seq</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300">Salmon</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300">Pipeline Validation</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300">Genomic Decoys</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="space-y-8 max-w-2xl">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Get In Touch</h2>
+                <p class="text-slate-400">Let's discuss genomic epidemiology, transcriptomics pipelines, or collaborative research.</p>
+            </div>
+            <form class="space-y-4 text-sm" onsubmit="event.preventDefault();">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-slate-300 font-medium">Name</label>
+                        <input type="text" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition" placeholder="Your Name">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-slate-300 font-medium">Email</label>
+                        <input type="email" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-slate-300 font-medium">Message</label>
+                    <textarea rows="4" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition resize-none" placeholder="Your Message..."></textarea>
+                </div>
+                <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-lg bg-emerald-500 text-slate-900 font-medium hover:bg-emerald-400 transition">
+                    Send Message
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/50 py-8 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div>
+                &copy; 2026 Rahma Abufoor. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-slate-300 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-slate-300 transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-slate-300 transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+            </div>
         </div>
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-center hover:border-emerald-500/40 transition-colors">
-          <p class="text-3xl font-extrabold text-emerald-400">1st</p>
-          <p class="mt-1 text-xs text-slate-400 uppercase tracking-wide">Student Senate President</p>
-        </div>
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-center hover:border-emerald-500/40 transition-colors">
-          <p class="text-3xl font-extrabold text-emerald-400">RNA</p>
-          <p class="mt-1 text-xs text-slate-400 uppercase tracking-wide">Seq Pipeline Focus</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- ===================== EXPERIENCE ===================== -->
-<section id="experience" class="py-24 border-t border-slate-800/60 bg-slate-900/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">Experience</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">Where I've worked</h2>
-    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
 
-    <div class="mt-14 relative border-l-2 border-slate-800 pl-8 space-y-14 ml-2">
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-      <div class="relative">
-        <span class="absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 ring-4 ring-slate-950">
-          <i data-lucide="dna" class="w-3.5 h-3.5 text-slate-950"></i>
-        </span>
-        <p class="text-sm text-emerald-400 font-semibold">2024 — Present</p>
-        <h3 class="mt-1 text-xl font-bold text-white">Genomic Epidemiologist</h3>
-        <p class="text-slate-400">Regional Public Health Genomics Laboratory</p>
-        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
-          <li>Design and validate RNA-seq analysis pipelines used to track disease-associated expression signatures across patient cohorts.</li>
-          <li>Lead quality-control and reproducibility validation for transcript quantification workflows built on Salmon.</li>
-          <li>Partner with epidemiology teams to translate sequencing output into surveillance-ready reporting.</li>
-          <li>Maintain version-controlled analysis repositories using Git to ensure full pipeline traceability.</li>
-        </ul>
-      </div>
-
-      <div class="relative">
-        <span class="absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-slate-700 ring-4 ring-slate-950">
-          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-200"></i>
-        </span>
-        <p class="text-sm text-emerald-400 font-semibold">2022 — 2024</p>
-        <h3 class="mt-1 text-xl font-bold text-white">Research Assistant, Molecular Epidemiology</h3>
-        <p class="text-slate-400">University Public Health Program</p>
-        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
-          <li>Supported faculty-led studies correlating gene expression variance with population-level health outcomes.</li>
-          <li>Processed and QC'd raw FASTQ data ahead of alignment and quantification stages.</li>
-          <li>Presented pipeline validation findings at departmental research symposia.</li>
-        </ul>
-      </div>
-
-      <div class="relative">
-        <span class="absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-slate-700 ring-4 ring-slate-950">
-          <i data-lucide="stethoscope" class="w-3.5 h-3.5 text-slate-200"></i>
-        </span>
-        <p class="text-sm text-emerald-400 font-semibold">2018 — 2022</p>
-        <h3 class="mt-1 text-xl font-bold text-white">Respiratory Therapist</h3>
-        <p class="text-slate-400">Regional Medical Center, Intensive Care Unit</p>
-        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
-          <li>Delivered critical respiratory care and managed mechanical ventilation for ICU and emergency patients.</li>
-          <li>Collaborated with multidisciplinary care teams to develop individualized treatment plans for pulmonary conditions.</li>
-          <li>Developed a clinical understanding of respiratory pathophysiology that now informs my genomics research questions.</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== EDUCATION ===================== -->
-<section id="education" class="py-24 border-t border-slate-800/60">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">Education</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">Academic background</h2>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-3 gap-8">
-
-      <div class="rounded-2xl border border-emerald-500/30 bg-slate-900/50 p-8 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 transition-all">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mb-6">
-          <i data-lucide="microscope" class="w-6 h-6"></i>
-        </div>
-        <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">In Progress · Expected 2026</p>
-        <h3 class="mt-2 text-lg font-bold text-white">MS in Bioscience</h3>
-        <p class="mt-1 text-slate-400 text-sm">Candidate — Genomics &amp; Computational Biology Track</p>
-        <p class="mt-4 text-slate-400 text-sm leading-relaxed">
-          Focused coursework in transcriptomics, computational genomics, and statistical methods for
-          high-throughput sequencing data.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 transition-all">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mb-6">
-          <i data-lucide="award" class="w-6 h-6"></i>
-        </div>
-        <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">Completed · 2022</p>
-        <h3 class="mt-2 text-lg font-bold text-white">Master of Public Health (MPH)</h3>
-        <p class="mt-1 text-slate-400 text-sm">Epidemiology Concentration</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-400">
-          <li class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-emerald-400 shrink-0"></i>Graduated with a 3.8 GPA</li>
-          <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-emerald-400 shrink-0"></i>Student Senate President</li>
-        </ul>
-      </div>
-
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 transition-all">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mb-6">
-          <i data-lucide="stethoscope" class="w-6 h-6"></i>
-        </div>
-        <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">Completed · 2018</p>
-        <h3 class="mt-2 text-lg font-bold text-white">BS in Respiratory Therapy</h3>
-        <p class="mt-1 text-slate-400 text-sm">Licensed Respiratory Therapist (RRT)</p>
-        <p class="mt-4 text-slate-400 text-sm leading-relaxed">
-          Clinical training in cardiopulmonary physiology, mechanical ventilation, and critical care
-          management.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SKILLS ===================== -->
-<section id="skills" class="py-24 border-t border-slate-800/60 bg-slate-900/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">Skills</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">Technical &amp; scientific toolkit</h2>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-2 gap-10">
-
-      <div class="space-y-6">
-        <h3 class="text-white font-semibold text-lg flex items-center gap-2">
-          <i data-lucide="code-2" class="w-5 h-5 text-emerald-400"></i>
-          Bioinformatics &amp; Computational Skills
-        </h3>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">RNA-seq Analysis</span>
-            <span class="text-emerald-400">92%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="92%"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">Salmon (Transcript Quantification)</span>
-            <span class="text-emerald-400">88%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="88%"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">Git &amp; Version Control</span>
-            <span class="text-emerald-400">90%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="90%"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">R &amp; Bioconductor</span>
-            <span class="text-emerald-400">85%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="85%"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">Python (Pandas, NumPy, Scikit-learn)</span>
-            <span class="text-emerald-400">80%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="80%"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm mb-1.5">
-            <span class="text-slate-300 font-medium">Unix / HPC Cluster Computing</span>
-            <span class="text-emerald-400">78%</span>
-          </div>
-          <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
-            <div class="skill-bar-fill h-full rounded-full bg-emerald-500" data-width="78%"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="space-y-8">
-        <div>
-          <h3 class="text-white font-semibold text-lg flex items-center gap-2 mb-5">
-            <i data-lucide="layers" class="w-5 h-5 text-emerald-400"></i>
-            Tools &amp; Platforms
-          </h3>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Salmon</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">STAR Aligner</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Nextflow</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Git / GitHub</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Docker</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Bioconductor</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">DESeq2</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Linux / HPC</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">SQL</span>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-white font-semibold text-lg flex items-center gap-2 mb-5">
-            <i data-lucide="heart-pulse" class="w-5 h-5 text-emerald-400"></i>
-            Clinical &amp; Epidemiological Skills
-          </h3>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Mechanical Ventilation</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Disease Surveillance</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Biostatistics</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Cohort Study Design</span>
-            <span class="px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 text-sm text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Patient Care</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PROJECTS ===================== -->
-<section id="projects" class="py-24 border-t border-slate-800/60">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">Projects</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">Featured research &amp; pipelines</h2>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-2 gap-8">
-
-      <!-- Featured Project -->
-      <div class="md:col-span-2 relative rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-slate-900 to-slate-900/40 p-8 md:p-10 overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/10 transition-shadow">
-        <div class="absolute -top-16 -right-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-xs font-semibold text-emerald-400 uppercase tracking-wide">
-          <i data-lucide="star" class="w-3.5 h-3.5"></i>
-          Featured Project
-        </span>
-        <h3 class="mt-5 text-2xl md:text-3xl font-bold text-white">Genomic Pipeline Validation for Brain Tissue Analysis</h3>
-        <p class="mt-4 text-slate-400 leading-relaxed max-w-3xl">
-          Designed and validated an end-to-end RNA-seq quantification pipeline for post-mortem brain
-          tissue samples, benchmarking Salmon-based transcript abundance estimates against alignment-based
-          methods to ensure reproducibility across neurodegenerative disease cohorts. The validated
-          pipeline reduced quantification discrepancies between replicate runs and established a
-          version-controlled, documented workflow now used as the standard for downstream differential
-          expression analysis.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-emerald-400 border border-slate-700">RNA-seq</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-emerald-400 border border-slate-700">Salmon</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-emerald-400 border border-slate-700">Git</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-emerald-400 border border-slate-700">Neurogenomics</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-emerald-400 border border-slate-700">Pipeline QC</span>
-        </div>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400 transition-colors">
-            <i data-lucide="github" class="w-4 h-4"></i>
-            View Repository
-          </a>
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-emerald-400 hover:text-emerald-400 transition-colors">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
-            Read the Report
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 transition-all">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mb-6">
-          <i data-lucide="git-branch" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-lg font-bold text-white">Reproducible RNA-seq Workflow Template</h3>
-        <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-          Built a Git-versioned, containerized RNA-seq analysis template covering quality control,
-          Salmon-based quantification, and differential expression reporting, adopted by lab colleagues
-          to standardize project setup.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Docker</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Salmon</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Git</span>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 transition-all">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mb-6">
-          <i data-lucide="activity" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-lg font-bold text-white">Expression Signature Surveillance Dashboard</h3>
-        <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-          Developed an internal reporting dashboard that tracks disease-associated gene expression
-          signatures across surveillance cohorts, translating pipeline output into
-          epidemiologist-friendly summaries.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">R</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Bioconductor</span>
-          <span class="px-3 py-1 rounded-md bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Epidemiology</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CONTACT ===================== -->
-<section id="contact" class="py-24 border-t border-slate-800/60 bg-slate-900/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <span class="text-emerald-400 font-semibold text-sm uppercase tracking-widest">Contact</span>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-white">Let's collaborate</h2>
-      <p class="mt-4 text-slate-400 leading-relaxed">
-        Whether it's a research collaboration, a pipeline consultation, or a question about genomic
-        epidemiology — I'd love to hear from you.
-      </p>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-2 gap-12 items-start">
-
-      <form id="contact-form" class="space-y-5 rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
-        <div>
-          <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your full name"
-            class="w-full rounded-lg bg-slate-800/70 border border-slate-700 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" />
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com"
-            class="w-full rounded-lg bg-slate-800/70 border border-slate-700 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" />
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-medium text-slate-300 mb-1.5">Message</label>
-          <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project or question..."
-            class="w-full rounded-lg bg-slate-800/70 border border-slate-700 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"></textarea>
-        </div>
-        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition-colors">
-          <i data-lucide="send" class="w-4 h-4"></i>
-          Send Message
-        </button>
-        <p id="form-success" class="hidden text-sm text-emerald-400 flex items-center gap-2 pt-1">
-          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-          Thanks! Your message has been noted — I'll get back to you soon.
-        </p>
-      </form>
-
-      <div class="space-y-6">
-        <div class="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-          <div class="flex items-center justify-center w-11 h-11 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-            <i data-lucide="mail" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <p class="text-sm text-slate-400">Email</p>
-            <a href="mailto:rmabufoor@gmail.com" class="text-slate-100 font-medium hover:text-emerald-400 transition-colors">rmabufoor@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-          <div class="flex items-center justify-center w-11 h-11 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-            <i data-lucide="map-pin" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <p class="text-sm text-slate-400">Location</p>
-            <p class="text-slate-100 font-medium">Available for remote &amp; on-site research roles</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-          <div class="flex items-center justify-center w-11 h-11 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-            <i data-lucide="linkedin" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <p class="text-sm text-slate-400">LinkedIn</p>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-slate-100 font-medium hover:text-emerald-400 transition-colors">linkedin.com/in/rahmaabufoor</a>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-          <div class="flex items-center justify-center w-11 h-11 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <p class="text-sm text-slate-400">GitHub</p>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-100 font-medium hover:text-emerald-400 transition-colors">github.com/rahmaabufoor</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="border-t border-slate-800/60 py-8">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-slate-500">© <span id="year"></span> Rahma Abufoor. All rights reserved.</p>
-    <div class="flex items-center gap-5">
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-500 hover:text-emerald-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-500 hover:text-emerald-400 transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
-      <a href="mailto:rmabufoor@gmail.com" aria-label="Email" class="text-slate-500 hover:text-emerald-400 transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
-    </div>
-  </div>
-</footer>
-
-<!-- Back to top -->
-<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 hidden items-center justify-center w-11 h-11 rounded-full bg-emerald-500 text-slate-950 shadow-lg hover:bg-emerald-400 transition-colors">
-  <i data-lucide="arrow-up" class="w-5 h-5"></i>
-</button>
-
-<script>
-  // Initialize Lucide icons
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
-
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconMenu = document.getElementById('icon-menu');
-  const iconClose = document.getElementById('icon-close');
-
-  function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-    iconMenu.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-    menuToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    if (isOpen) {
-      closeMobileMenu();
-    } else {
-      mobileMenu.classList.remove('hidden');
-      iconMenu.classList.add('hidden');
-      iconClose.classList.remove('hidden');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-
-  // Navbar shadow on scroll + back-to-top visibility
-  const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('back-to-top');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('shadow-lg', 'shadow-black/20');
-    } else {
-      navbar.classList.remove('shadow-lg', 'shadow-black/20');
-    }
-
-    if (window.scrollY > 400) {
-      backToTop.classList.remove('hidden');
-      backToTop.classList.add('flex');
-    } else {
-      backToTop.classList.add('hidden');
-      backToTop.classList.remove('flex');
-    }
-  });
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Animate skill bars when skills section enters view
-  const skillBars = document.querySelectorAll('.skill-bar-fill');
-  const skillsSection = document.getElementById('skills');
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        skillBars.forEach(bar => {
-          bar.style.width = bar.getAttribute('data-width');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  if (skillsSection) skillObserver.observe(skillsSection);
 
-  // Contact form (static site — no backend, so we just confirm client-side)
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formSuccess.classList.remove('hidden');
-    contactForm.reset();
-  });
-
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Close mobile menu on link click within desktop nav too (no-op safeguard) and smooth scroll offset handled by CSS scroll-behavior
-</script>
-
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
